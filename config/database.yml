@@ -25,7 +25,3 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  database: test_xpof
-  username: test_xpof_user
-  password: <%= ENV['MYSITE_DATABASE_PASSWORD'] %>
-  url: <%= ENV['DATABASE_URL'] %>
