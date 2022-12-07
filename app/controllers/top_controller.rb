@@ -1,12 +1,4 @@
 class TopController < ApplicationController
-<<<<<<< HEAD
-    def main
-        if session[:login_uid]
-            render "main"
-        else 
-            render "login"
-        end
-    end
     def login
         if User.find_by(uid: params[:uid])
             signup = User.find_by(uid: params[:uid]).pass
@@ -20,7 +12,6 @@ class TopController < ApplicationController
             render 'error'
         end
     end
-=======
     def login
         @user = User.find_by(uid: params[:uid])
         if BCrypt::Password.new(@user.pass) == params[:pass]
@@ -30,8 +21,6 @@ class TopController < ApplicationController
             render root_path
         end
     end
-    
->>>>>>> fbc7486322309565b2d63f5810cf888bfd8755a6
     def logout
         session.delete(:login_uid)
         redirect_to root_path
