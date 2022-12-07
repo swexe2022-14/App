@@ -14,12 +14,15 @@ ActiveRecord::Schema.define(version: 2022_11_30_065620) do
 
   create_table "financials", force: :cascade do |t|
     t.string "insititution"
-    t.integer "spend"
+    t.integer "usable"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "spends", force: :cascade do |t|
+    t.string "insititution"
+    t.integer "spendmoney"
+    t.string "tag"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
