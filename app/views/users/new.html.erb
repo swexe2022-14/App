@@ -1,10 +1,14 @@
-<%= form_for @user , url: {action: :create} do |f| %>
-    <%= f.label :uid, 'ユーザー名' %>
-    <%= f.text_field :uid %>
-    <%= f.label :pass, 'パスワード' %>
-    <%= f.text_field :pass %>
-    <%= f.label :code, 'パスコード(数字でのみご入力してください)' %>
-    <%= f.number_field :code %>
-    
-    <%= f.submit '登録' %>
-<% end %>
+<div class="create_user">
+    <p>
+    <%= form_for @user , url: {action: :create} do |f| %>
+        <%= f.label :uid, 'ユーザー名' %>
+        <%= f.text_field :uid %><br>
+        <%= f.label :pass, 'パスワード' %>
+        <%= f.text_field :pass %><br>
+        <%= f.label :code, 'パスコード(数字でのみご入力してください)' %>
+        <%= f.number_field :code %><br>
+        
+        <button class="button is-submit"><%= f.submit '登録' %></button>
+    <% end %>
+    </p>
+</div>

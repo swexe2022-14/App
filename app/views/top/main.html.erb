@@ -1,5 +1,13 @@
-こちらはメインページです
+<div class="main">
+    <h1>こちらはメインページです</h1>
+    
+    <p>
+        ログインされる方は<%= link_to 'こちら', top_login_page_path %>
+    </p>
+    <p>
+        新規に登録される方は<%= link_to 'こちら', new_user_path %>
+    </p>
+</div>
 
-ログインされる方は<%= link_to 'こちら', top_login_page_path %>
 
-新規に登録される方は<%= link_to 'こちら', new_user_path %>
+

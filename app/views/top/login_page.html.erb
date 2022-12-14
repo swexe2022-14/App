@@ -1,10 +1,18 @@
-ログイン画面
-<%= form_tag '/top/login', method: :post do %>
-    <%= label_tag :uid, 'ユーザー名' %>
-    <%= text_field_tag :uid %>
-    <%= label_tag :pass, 'パスワード' %>
-    <%= password_field_tag :pass %>
-    <%= submit_tag 'ログイン' %>
-<% end %>
+<div class="login">
 
-<%= link_to '戻る', :back %>
+    <h1>ログイン画面</h1>
+    
+    <p>
+        <%= form_tag '/top/login', method: :post do %>
+            <%= label_tag :uid, 'ユーザー名' %>
+            <%= text_field_tag :uid %><br>
+            <%= label_tag :pass, 'パスワード' %>
+            <%= password_field_tag :pass %><br>
+            <button class="button is-submit"><%= submit_tag 'ログイン' %></button>
+        <% end %>
+    </p>
+    
+    <p>
+        <button class="button is-back"><%= link_to '戻る', :back %></button>
+    </p>
+</div>

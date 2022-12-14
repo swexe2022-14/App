@@ -1,8 +1,0 @@
-金融機関登録ページ
-<%= form_for @financial , url: {action: :create} do |f| %>
-    <%= f.label :insititution, '金融機関名' %>
-    <%= f.text_field :insititution %>
-    <%= f.label :usable, '使用可能金額' %>
-
-    <%= f.submit '登録' %>
-<% end %>
