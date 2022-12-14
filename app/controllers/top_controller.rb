@@ -13,4 +13,10 @@ class TopController < ApplicationController
         session.delete(:login_uid)
         redirect_to root_path
     end
+    
+    def confirmation
+       if params[:passcode] == User.code
+           redirect_to financials_new_path
+       end
+    end
 end

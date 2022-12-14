@@ -6,9 +6,8 @@ Rails.application.routes.draw do
     post 'top/login'
     get 'top/logout'
     get 'top/login_page'
-    post 'top/login'
-    get 'top/logout'
-    #get 'moneys/expenditure_list'
-    #get 'moneys/detailde_view'
+    get 'top/passcode'
+    post 'top/confirmation'
     get 'financials/new'
+    get 'financials/show'
 end
