@@ -1,0 +1,19 @@
+<div class="create_spend">
+    <p>
+    <%= form_for @spend , url: {action: :create} do |i| %>
+        <%= i.label :spendmoney, '使用金額' %>
+        <%= i.text_field :spendmoney %><br>
+        <%= i.select :tag, 
+        [["食事","Food"],
+        ["ファッション","Fashion"],
+        ["医療","Medical"],
+        ["交通","Traffic"],
+        ["水道・光熱","Utility"],
+        ["ホビー","Hobby"],
+        ["その他","Others"]],
+        include_blank: "選択してください" %><br>
+        <%= i.select :insititution, @financials.map{ |financial| [financial.insititution, financial.insititution]} %><br>
+        <button class="button is-submit"><%= i.submit '追加' %></button>
+    <% end %>
+    </p>
+</div>

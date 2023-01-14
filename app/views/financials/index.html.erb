@@ -1,0 +1,11 @@
+<% @financials.each do |e| %>
+    <p>
+        機関名：<%= e.insititution %>｜
+        使用可能金額：<%= e.usable %>円｜
+        <%= link_to '詳細', financial_path(e) %>
+    </p>
+<% end %>
+
+<p>
+    ＊金融機関名の変更や使用可能金額を変更する場合は編集をクリックしてください。
+</P>

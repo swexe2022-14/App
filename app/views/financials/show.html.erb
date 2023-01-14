@@ -1,12 +1,13 @@
-<% @financials.each do |e| %>
-    <p>
-        機関名：<%= e.insititution %>｜
-        使用可能金額：<%= e.usable %>円｜
-        <%=link_to '削除', "/financials/#{e.id}", method: :delete %>｜
-        <%=link_to '編集', "/financials/#{e.id}/edit" %>
-    </p>
-<% end %>
-
+<h1>詳細ページ</h1>
+<p>金融機関</p>
 <p>
-    ＊金融機関名の変更や使用可能金額を変更する場合は編集をクリックしてください。
-</P>
+    <%= @financial.insititution %>
+</p>
+<p>使用可能金額</p>
+<p>
+    <%= @financial.usable %>
+</p>
+
+<%= link_to '削除', financial_path(@financial.id),method: :delete %><br>
+<%= link_to '編集', edit_financial_path(@financial.id) %><br>
+<%= link_to '一覧ページへ', financials_path %>

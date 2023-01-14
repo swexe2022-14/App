@@ -1,0 +1,6 @@
+<%= form_for @financial, url: {action: :update} do |k| %>
+    <%= k.label :spendmoney, '使用金額' %>
+    <%= k.number_field :spendmoney %>
+    <%= i.select :insititution, @financials.map{ |financial| [financial.insititution, financial.insititution]} %><br>
+    <%= k.submit '更新' %>
+<% end %>

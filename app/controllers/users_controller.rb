@@ -6,11 +6,11 @@ class UsersController < ApplicationController
     def create
         @user = User.new(
             uid: params[:user][:uid],
-            pass:  BCrypt::Password.create(params[:user][:pass]),
+            pass: BCrypt::Password.create(params[:user][:pass]),
             code: params[:user][:code])
         if @user.save
             session[:user_id] = @user.id
-            redirect_to users_path
+            redirect_to spends_path
         else
             render new_user_path
         end

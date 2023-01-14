@@ -1,7 +1,7 @@
 <%= form_for @financial, url: {action: :update} do |h| %>
     <%= h.label :insititution, '金融機関名' %>
     <%= h.text_field :insititution %>
-    <%= h.label :usable, '使用金額' %>
+    <%= h.label :usable, '使用可能金額' %>
     <%= h.number_field :usable %>
     <%= h.submit '更新' %>
 <% end %>
