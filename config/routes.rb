@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-    resources :users
+    resources :users,only: [:new, :create, :destroy]
     resources :financials
     resources :spends
     get 'top/main'
@@ -11,4 +11,6 @@ Rails.application.routes.draw do
     get 'top/passcode_1'
     post 'top/confirmation_2'
     get 'top/passcode_2'
+    post 'top/confirmation_3'
+    get 'top/passcode_3'
 end

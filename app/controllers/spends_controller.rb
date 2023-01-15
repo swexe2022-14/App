@@ -13,14 +13,20 @@ class SpendsController < ApplicationController
            redirect_to spends_path
        else
            render new_spend_path
+           puts "入力内容に誤りがあります。"
        end
     end
     
     def index
-        @spends = Spend.all
+        @spends = Spend.order(:tag).all
+    end
+    
+    def show
+        @spend = Spend.find(params[:id])
     end
     
     def edit
+        @financials = Financial.all
         @spend = Spend.find(params[:id])
     end
     
@@ -32,6 +38,13 @@ class SpendsController < ApplicationController
             redirect_to spends_path
         else 
             render edit_spend_path
+            puts "編集内容に誤りがあります。"
         end
+    end
+    
+    def destroy
+        spend = Spend.find(params[:id])
+        spend.destroy
+        redirect_to spends_path
     end
 end

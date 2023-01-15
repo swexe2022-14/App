@@ -1,0 +1,10 @@
+<div class="confirmation">
+    <h1>パスコードの確認</h1>
+    <p>
+        <%= form_tag '/top/confirmation_3', method: :post do %>
+            <%= label_tag :passcode, 'パスコード' %>
+            <%= password_field_tag :passcode %><br>
+            <button class="button is-submit"><%= submit_tag '確認' %></button>
+        <% end %>
+    </p>
+</div>

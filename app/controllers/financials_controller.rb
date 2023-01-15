@@ -7,10 +7,6 @@ class FinancialsController < ApplicationController
         @financials = Financial.all
     end
     
-    def show
-       @financial = Financial.find(params[:id])
-    end
-    
     def create
         @financial = Financial.new(
             insititution: params[:financial][:insititution],
@@ -19,6 +15,7 @@ class FinancialsController < ApplicationController
             redirect_to financials_path
         else
             render new_financial_path
+            puts "入力内容に誤りがあります。"
         end
     end
     
@@ -34,6 +31,7 @@ class FinancialsController < ApplicationController
             redirect_to financial_path(financial.id)
         else
             render edit_financial_path
+            puts "編集内容に誤りがあります。"
         end
     end
     

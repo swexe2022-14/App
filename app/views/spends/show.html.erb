@@ -1,0 +1,12 @@
+<h2>詳細ページ</h2>
+
+<h3><%= @spend.tag %></h3>
+
+<p>
+    金融機関名：<%= @spend.insititution %><br>
+    利用金額：<%= @spend.spendmoney %>円
+</p>
+
+<%= link_to :back do %>
+    <button>戻る</button>
+<% end %>

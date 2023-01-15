@@ -10,11 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_30_065620) do
+ActiveRecord::Schema.define(version: 2023_01_15_050014) do
 
   create_table "financials", force: :cascade do |t|
     t.string "insititution"
     t.integer "usable"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ids", force: :cascade do |t|
+    t.integer "financial_id"
+    t.integer "spend_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -23,6 +31,7 @@ ActiveRecord::Schema.define(version: 2022_11_30_065620) do
     t.string "insititution"
     t.integer "spendmoney"
     t.string "tag"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
