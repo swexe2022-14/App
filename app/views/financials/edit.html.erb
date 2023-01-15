@@ -1,13 +1,27 @@
-<h2>金融機関編集ページ</h2>
+<header>
+    <h1>
+        Money Management
+    </h1>
+</header>
 
-<%= form_for @financial, url: {action: :update} do |h| %>
-    <%= h.label :insititution, '金融機関名' %>
-    <%= h.text_field :insititution %>
-    <%= h.label :usable, '使用可能金額' %>
-    <%= h.number_field :usable %>
-    <%= h.submit '更新' %>
-<% end %>
+<div>    
+    <h2>金融機関編集ページ</h2>
+    
+    <%= form_for @financial, url: {action: :update} do |h| %>
+        <%= h.label :insititution, '金融機関名' %>
+        <%= h.text_field :insititution %>
+        <%= h.label :usable, '使用可能金額' %>
+        <%= h.number_field :usable %>
+        <%= h.submit '更新' %>
+    <% end %>
+    
+    <%= link_to :back do %>
+        <button>戻る</button>
+    <% end %>
+</div>
 
-<%= link_to :back do %>
-    <button>戻る</button>
-<% end %>
+<footer>
+    <p>
+      2011140053Nakamura&2011140088Izumi
+    </p>
+</footer>

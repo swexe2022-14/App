@@ -1,4 +1,12 @@
-<div class="create_user">
+<header>
+    <h1>
+        Money Management
+    </h1>
+</header>
+    
+<div class="container">    
+    <h2>ログイン画面</h2>
+    
     <p>
     <%= form_for @user , url: {action: :create} do |f| %>
         <%= f.label :uid, 'ユーザー名' %>
@@ -11,4 +19,14 @@
         <button class="button is-submit"><%= f.submit '登録' %></button>
     <% end %>
     </p>
+    
+    <p>
+        <button><%= link_to '戻る', :back %></button>
+    </p>
 </div>
+    
+<footer>
+    <p>
+      2011140053Nakamura&2011140088Izumi
+    </p>
+</footer>

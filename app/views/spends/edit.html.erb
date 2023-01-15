@@ -1,12 +1,26 @@
-<h2>支出内容編集ページ</h2>
+<header>
+    <h1>
+        Money Management
+    </h1>
+</header>
+
+<div>
+    <h2>支出内容編集ページ</h2>
 
 <%= form_for @financial, url: {action: :update} do |k| %>
-    <%= k.label :spendmoney, '使用金額' %>
-    <%= k.number_field :spendmoney %>
-    <%= i.select :insititution, @financials.map{ |financial| [financial.insititution, financial.insititution]} %><br>
-    <%= k.submit '更新' %>
-<% end %>
+        <%= k.label :spendmoney, '使用金額' %>
+        <%= k.number_field :spendmoney %>
+        <%= i.select :insititution, @financials.map{ |financial| [financial.insititution, financial.insititution]} %><br>
+        <%= k.submit '更新' %>
+    <% end %>
+    
+    <%= link_to :back do %>
+        <button>戻る</button>
+    <% end %>
+</div>
 
-<%= link_to :back do %>
-    <button>戻る</button>
-<% end %>
+<footer>
+    <p>
+      2011140053Nakamura&2011140088Izumi
+    </p>
+</footer>

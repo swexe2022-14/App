@@ -1,6 +1,11 @@
-<div class="login">
-
-    <h1>ログイン画面</h1>
+<header>
+    <h1>
+        Money Management
+    </h1>
+</header>
+    
+<div class="container">    
+    <h2>ログイン画面</h2>
     
     <p>
         <%= form_tag '/top/login', method: :post do %>
@@ -8,11 +13,19 @@
             <%= text_field_tag :uid %><br>
             <%= label_tag :pass, 'パスワード' %>
             <%= password_field_tag :pass %><br>
-            <button class="button is-submit"><%= submit_tag 'ログイン' %></button>
+            <button><%= submit_tag 'ログイン' %></button>
         <% end %>
     </p>
     
     <p>
-        <button class="button is-back"><%= link_to '戻る', :back %></button>
+        <button><%= link_to '戻る', :back %></button>
     </p>
 </div>
+    
+<footer>
+    <p>
+      2011140053Nakamura&2011140088Izumi
+    </p>
+</footer>
+    
+</body>

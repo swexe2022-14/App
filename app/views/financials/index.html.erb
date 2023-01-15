@@ -1,24 +1,38 @@
-<h2>金融機関一覧ページ</h2>
+<header>
+    <h1>
+        Money Management
+    </h1>
+</header>
 
-<% if @financials.present? %>
-    <% @financials.each do |e| %>
-        <p>
-            機関名：<%= e.insititution %>｜
-            使用可能金額：<%= e.usable %>円｜
-            <%= link_to "編集", edit_financial_path(e.id) %>
-            <%= link_to "削除", "financials/#{e.id}/", method: :delete %>
-        </p>
+<div>
+    <h2>金融機関一覧ページ</h2>
+    
+    <% if @financials.present? %>
+        <% @financials.each do |e| %>
+            <p>
+                機関名：<%= e.insititution %>｜
+                使用可能金額：<%= e.usable %>円｜
+                <%= link_to "編集", edit_financial_path(e.id) %>
+                <%= link_to "削除", "financials/#{e.id}/", method: :delete %>
+            </p>
+        <% end %>
+        
+    <% else %>
+        <p>登録されている金融機関がありません。</p>
     <% end %>
     
-<% else %>
-    <p>登録されている金融機関がありません。</p>
-<% end %>
+    <p>
+        ＊金融機関名の変更や使用可能金額を変更する場合は詳細をクリックしてください。
+    </P>
+    
+    <p>
+        金融機関登録は<%= link_to "こちら",  top_passcode_2_path %><br>
+        支出一覧ページは<%= link_to "こちら", spends_path %>
+    </p>
+</div>
 
-<p>
-    ＊金融機関名の変更や使用可能金額を変更する場合は詳細をクリックしてください。
-</P>
-
-<p>
-    金融機関登録は<%= link_to "こちら",  top_passcode_2_path %><br>
-    支出一覧ページは<%= link_to "こちら", spends_path %>
-</p>
+<footer>
+    <p>
+      2011140053Nakamura&2011140088Izumi
+    </p>
+</footer>

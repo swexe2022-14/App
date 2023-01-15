@@ -19,6 +19,7 @@ class SpendsController < ApplicationController
     
     def index
         @spends = Spend.order(:tag).all
+        @chart = Spend.group(:tag).count
     end
     
     def show
