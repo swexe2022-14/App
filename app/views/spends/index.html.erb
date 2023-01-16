@@ -7,13 +7,13 @@
 <div>
     <h2>支出一覧ページ</h2>
 
-    <% if @spends.present? %>
+    <% if @spends3.present? %>
     
         <h3>支出割合</h3>
         
-        <%= pie_chart @chart %>
+        <%= pie_chart @chart %> 
         
-        <% @spends.each do |j| %>
+        <% @spends3.each do |j| %>
             <p>
                 ジャンル：<%= j.tag %>｜
                 利用金額：<%= j.spendmoney %>円｜

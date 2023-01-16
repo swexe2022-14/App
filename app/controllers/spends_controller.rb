@@ -5,20 +5,20 @@ class SpendsController < ApplicationController
     end
     
     def create
-       @spend = Spend.new(
+        @spend = Spend.new(
            insititution: params[:spend][:insititution],
            spendmoney: params[:spend][:spendmoney],
            tag: params[:spend][:tag])
-       if @spend.save
+        if @spend.save
            redirect_to spends_path
-       else
+        else
            render new_spend_path
            puts "入力内容に誤りがあります。"
-       end
+        end
     end
     
     def index
-        @spends = Spend.order(:tag).all
+        @spends3 = Spend.order(:tag).all
         @chart = Spend.group(:tag).count
     end
     
