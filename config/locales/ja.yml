@@ -1,0 +1,7 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        uid: 名前
+        pass: パスワード
+        code: パスコード

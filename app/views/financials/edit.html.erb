@@ -9,15 +9,17 @@
     
     <%= form_for @financial, url: {action: :update} do |h| %>
         <%= h.label :insititution, '金融機関名' %>
-        <%= h.text_field :insititution %>
+        <%= h.text_field :insititution %><br>
         <%= h.label :usable, '使用可能金額' %>
-        <%= h.number_field :usable %>
-        <%= h.submit '更新' %>
+        <%= h.number_field :usable %><br>
+        <div class="left button">
+            <%= h.submit '更新' %>
+        </div>
     <% end %>
     
-    <%= link_to :back do %>
-        <button>戻る</button>
-    <% end %>
+    <div class="left link">
+        <%= link_to "戻る", financials_path %>
+    </div>
 </div>
 
 <footer>

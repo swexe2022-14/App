@@ -5,7 +5,17 @@
 </header>
     
 <div class="container">    
-    <h2>ログイン画面</h2>
+    <h2>新規登録画面</h2>
+    
+    <% if @user.errors.any? %>
+        <div class = "alert">
+            <ul>
+                <% @user.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
     
     <p>
     <%= form_for @user , url: {action: :create} do |f| %>
@@ -13,7 +23,7 @@
         <%= f.text_field :uid %><br>
         <%= f.label :pass, 'パスワード' %>
         <%= f.text_field :pass %><br>
-        <%= f.label :code, 'パスコード(数字でのみご入力してください)' %>
+        <%= f.label :code, 'パスコード(数字でのみ入力してください)' %>
         <%= f.number_field :code %><br>
         
         <button class="button is-submit"><%= f.submit '登録' %></button>
@@ -21,7 +31,7 @@
     </p>
     
     <p>
-        <button><%= link_to '戻る', :back %></button>
+        <button><%= link_to '戻る', root_path %></button>
     </p>
 </div>
     

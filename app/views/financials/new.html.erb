@@ -5,7 +5,18 @@
 </header>
 
 <div class="add_finance">
-    <h1>金融機関登録ページ</h1>
+    <h2>金融機関登録ページ</h2>
+    
+    <% if @financial.errors.any? %>
+        <div class = "alert">
+            <ul>
+                <% @financial.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+    
     <p>
         <%= form_for @financial , url: {action: :create} do |g| %>
             <%= g.label :insititution, '金融機関名' %>
@@ -14,6 +25,8 @@
             <%= g.number_field :usable %>円<br>
             <button class="button is-submit"><%= g.submit '登録' %></button>
         <% end %>
+        
+        <%= link_to "戻る", financials_path %>
     </p>
 </div>
 

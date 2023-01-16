@@ -8,6 +8,11 @@
     <h2>金融機関一覧ページ</h2>
     
     <% if @financials.present? %>
+    
+        <h3 class="usable">
+            利用可能合計金額は<%= @usable %>円です
+        </h3>
+        
         <% @financials.each do |e| %>
             <p>
                 機関名：<%= e.insititution %>｜
@@ -16,12 +21,13 @@
                 <%= link_to "削除", "financials/#{e.id}/", method: :delete %>
             </p>
         <% end %>
+        
         <p>
-            ＊金融機関名の変更や使用可能金額を変更する場合は詳細をクリックしてください。
+            ※金融機関名の変更や使用可能金額を変更する場合は詳細をクリックしてください※
         </P>
         
     <% else %>
-        <p>登録されている金融機関がありません。</p>
+        <p>※登録されている金融機関がありません※</p>
     <% end %>
     
     <p>

@@ -13,13 +13,14 @@ class SpendsController < ApplicationController
            redirect_to spends_path
         else
            render new_spend_path
-           puts "入力内容に誤りがあります。"
         end
     end
     
     def index
-        @spends3 = Spend.order(:tag).all
-        @chart = Spend.group(:tag).count
+        @usable = Financial.sum(:usable)
+        @used = Spend.sum(:spendmoney)
+        @spends = Spend.order(:tag).all
+        @chart = Spend.group(:tag).sum(:spendmoney)
     end
     
     def show
@@ -38,8 +39,8 @@ class SpendsController < ApplicationController
             spendmoney: params[:spend][:spendmoney])
             redirect_to spends_path
         else 
-            render edit_spend_path
-            puts "編集内容に誤りがあります。"
+            spend.destroy
+            redirect_to spends_path
         end
     end
     

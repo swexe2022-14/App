@@ -10,7 +10,7 @@ class UsersController < ApplicationController
             code: params[:user][:code])
         if @user.save
             session[:user_id] = @user.id
-            redirect_to spends_path
+            redirect_to root_path
         else
             render new_user_path
         end

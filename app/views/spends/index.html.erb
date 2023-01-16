@@ -7,24 +7,32 @@
 <div>
     <h2>支出一覧ページ</h2>
 
-    <% if @spends3.present? %>
-    
+    <% if @spends.present? %>
         <h3>支出割合</h3>
-        
-        <%= pie_chart @chart %> 
-        
-        <% @spends3.each do |j| %>
-            <p>
-                ジャンル：<%= j.tag %>｜
-                利用金額：<%= j.spendmoney %>円｜
-                オプション：<%= link_to '編集', edit_spend_path(j.id) %>｜
-                詳細：<%= link_to '詳細', spend_path(j.id) %>｜
-                削除：<%= link_to '削除', j, method: :delete %>
+        <% if @usable < @used %>
+            <p class="danger">
+                ※使用可能金額から超過しています※
             </p>
-        <% end %>
+        <% else %>
+            <h3 class="usable">
+                利用可能残高は<%= @usable - @used %>円です
+            </h3>
+            <%= pie_chart @chart %> 
         
+            <% @spends.each do |j| %>
+                <p>
+                    ジャンル：<%= j.tag %>｜
+                    利用金額：<%= j.spendmoney %>円｜
+                    オプション：<%= link_to '編集', edit_spend_path(j.id) %>｜
+                    詳細：<%= link_to '詳細', spend_path(j.id) %>｜
+                    削除：<%= link_to '削除', j, method: :delete %>
+                </p>
+            <% end %>
+        <% end %>
     <% else %>
-        <p>登録されている支出内容がありません。</p>
+        <p>
+            ※登録されている支出内容がありません※
+        </p>
     <% end %>
     
     支出登録は<%= link_to "こちら",  top_passcode_1_path %><br>

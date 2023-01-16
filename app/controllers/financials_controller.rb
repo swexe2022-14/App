@@ -4,6 +4,7 @@ class FinancialsController < ApplicationController
     end
     
     def index
+        @usable = Financial.sum(:usable)
         @financials = Financial.all
     end
     
@@ -15,7 +16,6 @@ class FinancialsController < ApplicationController
             redirect_to financials_path
         else
             render new_financial_path
-            puts "入力内容に誤りがあります。"
         end
     end
     
@@ -28,10 +28,10 @@ class FinancialsController < ApplicationController
         if financial.update(
             insititution: params[:financial][:insititution],
             usable: params[:financial][:usable])
-            redirect_to financial_path(financial.id)
+            redirect_to financials_path
         else
-            render edit_financial_path
-            puts "編集内容に誤りがあります。"
+            financial.destroy
+            redirect_to financials_path
         end
     end
     
