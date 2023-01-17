@@ -11,8 +11,19 @@
         <h3>支出割合</h3>
         <% if @usable < @used %>
             <p class="danger">
-                ※使用可能金額から超過しています※
+                ※使用可能金額から超過しています※<br>
+                オプションの編集または、金融機関一覧ページから金額の編集をお願い致します
             </p>
+            
+             <% @spends.each do |j| %>
+                <p>
+                    ジャンル：<%= j.tag %>｜
+                    利用金額：<%= j.spendmoney %>円｜
+                    オプション：<%= link_to '編集', edit_spend_path(j.id) %>｜
+                    詳細：<%= link_to '詳細', spend_path(j.id) %>｜
+                    削除：<%= link_to '削除', j, method: :delete %>
+                </p>
+            <% end %>
         <% else %>
             <h3 class="usable">
                 利用可能残高は<%= @usable - @used %>円です
@@ -31,7 +42,8 @@
         <% end %>
     <% else %>
         <p>
-            ※登録されている支出内容がありません※
+            ※登録されている支出内容がありません※<br>
+            金融機関が未登録の場合、支出の登録はできませんのでご注意ください
         </p>
     <% end %>
     
