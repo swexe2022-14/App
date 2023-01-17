@@ -19,9 +19,9 @@
     
     <p>
         <%= form_for @financial , url: {action: :create} do |g| %>
-            <%= g.label :insititution, '金融機関名' %>
+            <%= g.label :insititution, '金融機関名' %>：
             <%= g.text_field :insititution %><br>
-            <%= g.label :usable, '使用可能金額' %>
+            <%= g.label :usable, '使用可能金額' %>：
             <%= g.number_field :usable %>円<br>
             <button class="button is-submit"><%= g.submit '登録' %></button>
         <% end %>

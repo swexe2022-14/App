@@ -8,7 +8,7 @@
     <h2>パスコードの確認</h2>
     <p>
         <%= form_tag '/top/confirmation_2', method: :post do %>
-            <%= label_tag :passcode, 'パスコード' %>
+            <%= label_tag :passcode, 'パスコード' %>：
             <%= password_field_tag :passcode %><br>
             <button class="button is-submit"><%= submit_tag '確認' %></button>
         <% end %>

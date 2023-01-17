@@ -8,8 +8,8 @@
 <div class="create_spend">
     <p>
     <%= form_for @spend , url: {action: :create} do |i| %>
-        <%= i.label :spendmoney, '使用金額' %>
-        <%= i.text_field :spendmoney %><br>
+        <%= i.label :spendmoney, '使用金額' %>：
+        <%= i.text_field :spendmoney %>円<br>
         <%= i.select :tag, 
         [["食事","Food"],
         ["ファッション","Fashion"],

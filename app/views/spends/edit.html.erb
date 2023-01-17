@@ -8,8 +8,8 @@
     <h2>支出内容編集ページ</h2>
 
     <%= form_for @spend, url: {action: :update} do |k| %>
-        <%= k.label :spendmoney, '使用金額' %>
-        <%= k.number_field :spendmoney %><br>
+        <%= k.label :spendmoney, '使用金額' %>：
+        <%= k.number_field :spendmoney %>円<br>
         <%= k.select :insititution, @financials.map{ |financial| [financial.insititution, financial.insititution]} %><br>
         <div class="left button">
             <%= k.submit '更新' %>

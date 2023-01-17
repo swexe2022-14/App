@@ -8,10 +8,10 @@
     <h2>金融機関編集ページ</h2>
     
     <%= form_for @financial, url: {action: :update} do |h| %>
-        <%= h.label :insititution, '金融機関名' %>
+        <%= h.label :insititution, '金融機関名' %>：
         <%= h.text_field :insititution %><br>
-        <%= h.label :usable, '使用可能金額' %>
-        <%= h.number_field :usable %><br>
+        <%= h.label :usable, '使用可能金額' %>：
+        <%= h.number_field :usable %>円<br>
         <div class="left button">
             <%= h.submit '更新' %>
         </div>

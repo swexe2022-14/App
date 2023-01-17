@@ -5,3 +5,8 @@ ja:
         uid: 名前
         pass: パスワード
         code: パスコード
+      financial:
+        insititution: 金融機関名
+        usable: 使用可能金額
+      spend:
+        spendmoney: 使用金額
